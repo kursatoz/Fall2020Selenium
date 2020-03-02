@@ -18,6 +18,9 @@ public class MyFirstSeleniumScript {
         driver.get("http://google.com");
         Thread.sleep(2000);
         String titleone="Google";
+        driver.get("http://amazon.com");
+        driver.navigate().forward();
+        System.out.println(driver.getCurrentUrl());
         if(titleone.equalsIgnoreCase(title)){
             System.out.println("true");
         }else{
