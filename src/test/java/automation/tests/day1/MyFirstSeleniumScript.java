@@ -17,11 +17,23 @@ public class MyFirstSeleniumScript {
         System.out.println("title>>."+ title);
         driver.get("http://google.com");
         Thread.sleep(2000);
-        if(driver.getTitle().equals("google")){
+        String titleone="Google";
+        if(titleone.equalsIgnoreCase(title)){
             System.out.println("true");
         }else{
             System.out.println("False");
         }
+        driver.navigate().back();
+        verifyTitle(driver.getTitle(),"Google");
+
         driver.close();
+    }
+
+    public static void  verifyTitle(String one,String two){
+        if (one.equals(two)){
+            System.out.println("Test passed");
+        }else{
+            System.out.println("Test failed");
+        }
     }
 }
