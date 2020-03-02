@@ -16,6 +16,9 @@ public class GoogleSearchTest {
         WebElement search=driver.findElement(By.name("q"));
         search.sendKeys("ozduman", Keys.ENTER);
         Thread.sleep(2500);
+
+        WebElement maps=driver.findElement(By.linkText("Maps"));
+        maps.click();
         driver.close();
     }
 }
