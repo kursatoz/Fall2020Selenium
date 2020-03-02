@@ -17,6 +17,11 @@ public class MyFirstSeleniumScript {
         System.out.println("title>>."+ title);
         driver.get("http://google.com");
         Thread.sleep(2000);
+        if(driver.getTitle().equals("google")){
+            System.out.println("true");
+        }else{
+            System.out.println("False");
+        }
         driver.close();
     }
 }
