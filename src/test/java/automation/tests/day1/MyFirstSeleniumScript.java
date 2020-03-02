@@ -13,7 +13,8 @@ public class MyFirstSeleniumScript {
 
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver =new ChromeDriver();
-
+        String title=driver.getTitle();
+        System.out.println("title>>."+ title);
         driver.get("http://google.com");
         Thread.sleep(2000);
         driver.close();
