@@ -53,4 +53,18 @@ public class MyFirstSeleniumScript {
             System.out.println("Test failed");
         }
     }
+    public static void  switchToWindowBaseOnTitle(String title,WebDriver driver){
+        Set<String> window=driver.getWindowHandles();
+        for (String window:window) {
+            driver.switchTo().window(window);
+            if(driver.getTitle().equals(title)){
+                break;
+            }
+
+        }
+
+    }
+
+
+
 }
