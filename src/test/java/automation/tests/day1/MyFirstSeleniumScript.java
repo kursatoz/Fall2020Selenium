@@ -54,8 +54,8 @@ public class MyFirstSeleniumScript {
         }
     }
     public static void  switchToWindowBaseOnTitle(String title,WebDriver driver){
-        Set<String> window=driver.getWindowHandles();
-        for (String window:window) {
+        Set<String> windows=driver.getWindowHandles();
+        for (String window:windows) {
             driver.switchTo().window(window);
             if(driver.getTitle().equals(title)){
                 break;
