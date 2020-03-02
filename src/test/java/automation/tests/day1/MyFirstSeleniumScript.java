@@ -7,6 +7,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebDriverBuilder;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Set;
+
 public class MyFirstSeleniumScript {
 
     public static void main(String[] args) throws Exception{
@@ -28,6 +30,18 @@ public class MyFirstSeleniumScript {
         }
         driver.navigate().back();
         verifyTitle(driver.getTitle(),"Google");
+        String windowHandle=driver.getWindowHandle();
+        System.out.println(windowHandle);
+        System.out.println("Before"+driver.getCurrentUrl());
+        Set<String> windowHandles= driver.getWindowHandles();
+        System.out.println("windowHandles = " + windowHandles);
+        for (String windowId:windowHandles) {
+            if(!windowId.equals(windowHandle)){
+                driver.switchTo().window(windowId);
+                }
+
+        }
+        System.out.println("after"+driver.getCurrentUrl());
 
         driver.close();
     }
